@@ -11,9 +11,9 @@ class MercadoPagoService {
   async getSubscriptionLink(email, amount, plan) {
     const preference = {
       payer_email: email,
-      reason: 'HOLA VET',
+      reason: 'Plan '+ plan,
       external_reference: "",
-      back_url: "https://hola-vet.vercel.app/step4",
+      back_url: `${process.env.FRONT_URL}step4`,
       auto_recurring: {
         frequency: 1,
         frequency_type: "months",

@@ -29,7 +29,7 @@ axios.post('https://api.mercadopago.com/preapproval_plan', data, {
   }
 })
 .then(response => {
-  console.log(response.data);
+  // console.log(response.data);
 })
 .catch(error => {
   console.error(error);

@@ -4,10 +4,10 @@ const axios = require('axios');
 const url = 'http://crm2.ar-vida.com:3040/WSCDSCRM/CrearCargaSolicitud.asmx';
 
 const getDataFromFront = async (req, res = response) => {
-    const { petData, formData } = req.body;
+    const { petData, formData, currentDate, opcion } = req.body;
 
-    const soapBody = SoapRequest(petData, formData);
-    console.log(soapBody);
+    const soapBody = SoapRequest(petData, formData, currentDate, opcion);
+    // console.log(soapBody);
     const headers = {
         'Content-Type': 'text/xml; charset=utf-8',
         // This SOAPAction might need to be adjusted based on WSDL or service documentation

@@ -25,7 +25,7 @@ axios({
     },
     data: data
 }).then((response) => {
-    console.log(response);
+    // console.log(response);
 }).catch((error) => {
     console.error(error);
 });

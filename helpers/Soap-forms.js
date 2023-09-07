@@ -1,13 +1,16 @@
-const SoapRequest = (petData, formData) => {
+const SoapRequest = (petData, formData, currentDate, opcion) => {
     // Extract the required data
     const {
         nombre, apellido, dni, email, direccion, codigoPostal, localidad,
-        endoso, opcion, fechaVenta, inicioVigencia, finVigencia,
+        fechaVenta, inicioVigencia, finVigencia,
         sexoTitular, TipoDocumentoTitular, fechaNacimientoTitular,selectedDate,
         telefono, telefonoMovilTitular, cuit,
         provinciaTitular, nombreApellidoPagador, dniPagador, formaPago,
-        banco, cbu, tipoCuenta, tarjeta, nroTarjeta, nroPin, mesVencimiento, anoVencimiento
-    } = formData;
+        banco, cbu, tipoCuenta, tarjeta, nroTarjeta, nroPin, mesVencimiento, anoVencimiento,
+        plan, Poliza, Endoso, fechaNacimiento
+    } = formData;   
+    
+    
 
     const mascotas = petData.map(pet => `
         <tem:Mascota>
@@ -26,19 +29,19 @@ const SoapRequest = (petData, formData) => {
         <soapenv:Body>
             <tem:HolaVet>
                 <tem:cargaSolicitudHolaVet>
-                    <tem:Poliza>701007</tem:Poliza>
-                    <tem:Endoso>7010070</tem:Endoso>
-                    <tem:Opción>Opcion A</tem:Opción>
-                    <tem:FechaVenta>2023-09-07</tem:FechaVenta>
-                    <tem:InicioVigencia>2023-09-07</tem:InicioVigencia>
-                    <tem:FinVigencia>2023-09-09</tem:FinVigencia>
+                    <tem:Poliza>${Poliza}</tem:Poliza>
+                    <tem:Endoso>${Endoso}</tem:Endoso>
+                    <tem:Opción>${opcion}</tem:Opción>
+                    <tem:FechaVenta>${currentDate}</tem:FechaVenta>
+                    <tem:InicioVigencia>${currentDate}</tem:InicioVigencia>
+                    <tem:FinVigencia>2025-12-31</tem:FinVigencia>
                     <tem:NombresTitular>${nombre}</tem:NombresTitular>
                     <tem:ApellidoTitular>${apellido}</tem:ApellidoTitular>
                     <tem:sexoTitular>${sexoTitular}</tem:sexoTitular>
                     <tem:tipoDocumentoTitular>${TipoDocumentoTitular}</tem:tipoDocumentoTitular>
                     <tem:nroDocumentoTitular>${dni}</tem:nroDocumentoTitular>
                     <tem:CUIT></tem:CUIT>
-                    <tem:FechaNacimientoTitular>1996-10-16</tem:FechaNacimientoTitular>
+                    <tem:FechaNacimientoTitular>${fechaNacimiento}</tem:FechaNacimientoTitular>
                     <tem:TelefonoParticularTitular>${telefono}</tem:TelefonoParticularTitular>
                     <tem:TelefonoMovilTitular>${telefono}</tem:TelefonoMovilTitular>
                     <tem:CorreoElectronicoTitular>${email}</tem:CorreoElectronicoTitular>
