@@ -8,7 +8,11 @@ const { getDataFromFront } = require('../controllers/holaVet');
 
 const router = Router();
 
-// router.get('/', usuariosGet);
+router.get('/', function (req, res) {
+  res.send('Hello')
+  res.send('World')
+})
+
 
 // router.put('/:id', [
 //     // check('id', 'No es un ID valido').isMongoId(),

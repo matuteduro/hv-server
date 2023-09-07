@@ -35,6 +35,7 @@ const getRegistros = async (req, res = response) => {
 };
 
 const getPrecios = async (req, res = response) => {
+
     const { idPoliza } = req.body;
     const soapBody = getPreciosRequest(idPoliza);
     

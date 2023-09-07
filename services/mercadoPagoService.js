@@ -11,13 +11,13 @@ class MercadoPagoService {
   async getSubscriptionLink(email, amount, plan) {
     const preference = {
       payer_email: email,
-      reason: plan,
+      reason: 'HOLA VET',
       external_reference: "",
-      back_url: "https://www.google.com",
+      back_url: "https://hola-vet.vercel.app/step4",
       auto_recurring: {
         frequency: 1,
         frequency_type: "months",
-        transaction_amount: 5,
+        transaction_amount: amount,
         currency_id: "ARS"
       }
     };
