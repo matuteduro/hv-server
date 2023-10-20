@@ -1,7 +1,7 @@
 const { response } = require('express');
 const { SoapRequest } = require('../helpers/Soap-forms');
 const axios = require('axios');
-const url = 'http://crm2.ar-vida.com:3040/WSCDSCRM/CrearCargaSolicitud.asmx';
+const url = 'http://crm2.ar-vida.com:3040/WSCDSCRM.PROD/CrearCargaSolicitud.asmx';
 
 const getDataFromFront = async (req, res = response) => {
     const { petData, formData, currentDate, opcion } = req.body;
@@ -14,8 +14,11 @@ const getDataFromFront = async (req, res = response) => {
         'SOAPAction': 'http://tempuri.org/HolaVet'  
     };
 
+    // console.log("SOAP REQUEST:", soapBody);
     try {
         const { data } = await axios.post(url, soapBody, { headers });
+        // console.log('TERMINO');
+        // console.log(data);
         res.json({ resultado: data });
     } catch (err) {
         console.error(err);

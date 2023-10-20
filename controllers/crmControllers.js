@@ -1,6 +1,7 @@
 const { response, request } = require('express');
 const { getRegistrosRequest, getPreciosRequest } = require('../helpers/soapUtils');
-const url = 'http://crm2.ar-vida.com:3040/WSGRCRM/getFromCRM.asmx';
+const url = 'http://crm2.ar-vida.com:3040/WSGRCRM.PROD/getFromCRM.asmx';
+
 const axios = require('axios');
 const xml2js = require('xml2js');
 

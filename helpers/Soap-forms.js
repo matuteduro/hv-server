@@ -10,7 +10,7 @@ const SoapRequest = (petData, formData, currentDate, opcion) => {
         plan, Poliza, Endoso, fechaNacimiento
     } = formData;   
     
-    
+    // console.log(dni);
 
     const mascotas = petData.map(pet => `
         <tem:Mascota>
@@ -47,19 +47,11 @@ const SoapRequest = (petData, formData, currentDate, opcion) => {
                     <tem:CorreoElectronicoTitular>${email}</tem:CorreoElectronicoTitular>
                     <tem:DomicilioTitular>${direccion}</tem:DomicilioTitular>
                     <tem:CodPostal>${codigoPostal}</tem:CodPostal>
-                    <tem:Localidad>${localidad}</tem:Localidad>
+                    <tem:Localidad>${codigoPostal}</tem:Localidad>
                     <tem:ProvinciaTitular>${localidad}</tem:ProvinciaTitular>
                     <tem:NombreApellidoPagador>${nombre}</tem:NombreApellidoPagador>
                     <tem:DNIPagador>${dni}</tem:DNIPagador>
-                    <tem:formaPago>2</tem:formaPago>
-                    <tem:Banco></tem:Banco>
-                    <tem:CBU></tem:CBU>
-                    <tem:TipoCuenta></tem:TipoCuenta>
-                    <tem:Tarjeta>Visa</tem:Tarjeta>
-                    <tem:NroTarjeta>1111222233334444</tem:NroTarjeta>
-                    <tem:NroPin>123</tem:NroPin>
-                    <tem:MesVencimiento>2023-09-07</tem:MesVencimiento>
-                    <tem:AñoVencimiento>2029-09-07</tem:AñoVencimiento>
+                    <tem:formaPago>5</tem:formaPago>
                     <tem:Mascotas>${mascotas}</tem:Mascotas>
                 </tem:cargaSolicitudHolaVet>
             </tem:HolaVet>
